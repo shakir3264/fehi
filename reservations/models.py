@@ -19,6 +19,7 @@ class Rooms(models.Model):
 
 
 class Guest(models.Model):
+    registration_no = models.IntegerField()
     name = models.CharField(max_length=40)
     email = models.EmailField()
     passport = models.CharField(max_length=40)
