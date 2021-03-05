@@ -1,3 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Guest, Companies
+
+
+class GuestAdmin(admin.ModelAdmin):
+    list_display = ("id", "name", "email", "passport", "nationality")
+
+
+
+admin.site.register(Guest, GuestAdmin)
+admin.site.register(Companies)
