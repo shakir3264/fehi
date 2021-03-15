@@ -52,6 +52,10 @@ class Invoice(models.Model):
     reservation = models.ForeignKey('Reservations', related_name="reservations", on_delete=models.RESTRICT, null=False)
     daily_rate = models.DecimalField(max_digits=10, decimal_places=2)
     other_charges = models.DecimalField(max_digits=10, decimal_places=2)
+    tgst = models.DecimalField(max_digits=10, decimal_places=2)
+    green_tax = models.DecimalField(max_digits=10, decimal_places=2)
+    service_charge = models.DecimalField(max_digits=10, decimal_places=2)
+    total = models.DecimalField(max_digits=10, decimal_places=2)
     payment_method = models.CharField(max_length=20)
 
     def __str__(self):
