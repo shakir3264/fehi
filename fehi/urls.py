@@ -19,7 +19,8 @@ from rest_framework import routers
 from reservations import views
 
 router = routers.DefaultRouter()
-router.register(r'reservations', views.ReservationView, 'reservation')
+router.register(r'reservation', views.ReservationView, 'reservation')
+router.register(r'invoice', views.InvoiceView, 'invoice')
 
 
 urlpatterns = [

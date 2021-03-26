@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django import forms
 from rest_framework import viewsets
-from .serializers import ReservationSerializer
-from .models import Reservations
+from .serializers import ReservationSerializer, InvoiceSerializer
+from .models import Reservations, Invoice
 
 
 # Create your views here.
@@ -29,3 +29,8 @@ def NewReservation(request):
 class ReservationView(viewsets.ModelViewSet):
     serializer_class = ReservationSerializer
     queryset = Reservations.objects.all()
+
+
+class InvoiceView(viewsets.ModelViewSet):
+    serializer_class = InvoiceSerializer
+    queryset = Invoice.objects.all()
